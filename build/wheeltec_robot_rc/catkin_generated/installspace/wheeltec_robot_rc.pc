@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/wheeltec_robot/install
+
+Name: wheeltec_robot_rc
+Description: Description of wheeltec_robot_rc
+Version: 2.4.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp geometry_msgs joy

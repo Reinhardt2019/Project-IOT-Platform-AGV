@@ -1,0 +1,32 @@
+<launch>
+  <!-- rplidar A1-->
+  <!-- 思岚A1的雷达，参考官方SDK-->
+  <node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+    <param name="serial_port"         type="string" value="/dev/rplidar_laser"/>
+    <param name="serial_baudrate"     type="int"    value="115200"/>
+    <param name="frame_id"            type="string" value="laser"/>
+    <param name="inverted"            type="bool"   value="false"/>
+    <param name="angle_compensate"    type="bool"   value="true"/>
+    <param name="angle_start"         type="double" value="0"  />   <!-- 扫描起始角度-->
+    <param name="angle_end"           type="double" value="360"/>   <!-- 扫描结束角度-->
+    <!--<param name="angle_start"         type="double" value="270"/>-->   <!-- A1_moveit扫描起始角度-->
+    <!--<param name="angle_end"           type="double" value="90"/> -->   <!-- A1_moveit扫描结束角度-->
+    <!--<param name="angle_start"         type="double" value="315"/>-->   <!-- A2_moveit扫描起始角度-->
+    <!--<param name="angle_end"           type="double" value="135"/>-->   <!-- A2_moveit扫描结束角度-->
+    <!--<param name="angle_start"         type="double" value="250"/>-->   <!-- 服务机器人扫描起始角度-->
+    <!--<param name="angle_end"           type="double" value="110"/>-->   <!-- 服务机器人扫描结束角度-->
+    <param name="distance_min"        type="double" value="0"  /> <!-- 最小扫描距离-->
+    <param name="distance_max"        type="double" value="10" /> <!-- 最大扫描距离-->
+    <!--角度分割-->
+    <param name="is_parted"           type="bool"   value="false"/> <!--角度是否分割-->
+    <param name="angle1_start"        type="double" value="40"/> <!--第一个屏蔽角度的起始角度-->
+    <param name="angle1_end"          type="double" value="50"/> <!--第一个屏蔽角度的结束角度-->
+    <param name="angle2_start"        type="double" value="130"/> <!--第二个屏蔽角度的起始角度--> 
+    <param name="angle2_end"          type="double" value="140"/> <!--第二个屏蔽角度的结束角度--> 
+    <param name="angle3_start"        type="double" value="220"/> <!--第三个屏蔽角度的起始角度-->
+    <param name="angle3_end"          type="double" value="230"/> <!--第三个屏蔽角度的结束角度-->
+    <param name="angle4_start"        type="double" value="310"/> <!--第四个屏蔽角度的起始角度-->
+    <param name="angle4_end"          type="double" value="320"/> <!--第四个屏蔽角度的结束角度-->       
+  </node>
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/wheeltec_robot/install
+
+Name: wheeltec_multi
+Description: Description of wheeltec_multi
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp

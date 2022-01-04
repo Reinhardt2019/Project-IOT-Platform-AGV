@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/wheeltec_robot/devel
+
+Name: usb_cam
+Description: Description of usb_cam
+Version: 0.3.6
+Cflags: -I/home/wheeltec/wheeltec_robot/src/usb_cam/include
+Libs: -L${prefix}/lib -lusb_cam
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/wheeltec_robot/devel
+
+Name: ddynamic_reconfigure
+Description: Description of ddynamic_reconfigure
+Version: 0.3.2
+Cflags: -I/home/wheeltec/wheeltec_robot/src/realsense-ros-development/ddynamic_reconfigure-kinetic-devel/include
+Libs: -L${prefix}/lib -lddynamic_reconfigure
+Requires: roscpp dynamic_reconfigure

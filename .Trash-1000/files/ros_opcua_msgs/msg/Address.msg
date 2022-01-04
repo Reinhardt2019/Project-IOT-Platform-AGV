@@ -1,0 +1,2 @@
+string nodeId
+string qualifiedName

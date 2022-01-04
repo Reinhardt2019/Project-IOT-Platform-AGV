@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/wheeltec_robot/install
+
+Name: ddynamic_reconfigure
+Description: Description of ddynamic_reconfigure
+Version: 0.3.2
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lddynamic_reconfigure
+Requires: roscpp dynamic_reconfigure
