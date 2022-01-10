@@ -2,6 +2,7 @@
 #include <move_base_msgs/MoveBaseAction.h>
 #include <actionlib/client/simple_action_client.h>
 #include <string>
+#include <simple_navigation_goals/ClientPose.h>
 
 using namespace std;
 
@@ -21,8 +22,9 @@ move_base_msgs::MoveBaseGoal set_goal(){
   return goal;
 }
 
-int main(int argc, char** argv){
-  ros::init(argc, argv, "simple_navigation_goals");
+
+bool deliver_navigation(simple_navigation_goals::ClientPose::Request &req,
+simple_navigation_goals::ClientPose::Response &res){
 
   //tell the action client that we want to spin a thread by default
   MoveBaseClient ac("move_base", true);
@@ -34,11 +36,13 @@ int main(int argc, char** argv){
   move_base_msgs::MoveBaseGoal goal;
   //if the AGV need to go to the client first
 
-  bool client = false;
-  ros::param::get("/del/go_to_client_first",  client);  
+  bool client;
+  ros::param::get("/go_to_client_first",  client);  
   if(client){
-    x = 6;
-    w = 1;
+    x = req.x;
+    y = req.y;
+    z = req.z;
+    w = req.orientation;
     goal=set_goal();
     ROS_INFO("Sending goal");
     ac.sendGoal(goal);
@@ -51,36 +55,51 @@ int main(int argc, char** argv){
     }
   }
 
-  //go to the destination
-  ros::param::get("/del/goal_pose_x",  x);  
-  ros::param::get("/del/goal_pose_y",  y); 
-  ros::param::get("/del/goal_pose_z",  z); 
-  ros::param::get("/del/goal_orientation_w",w);
-  
-  goal=set_goal();
-  ROS_INFO("Sending goal");
-  ac.sendGoal(goal);
-  ac.waitForResult();
-  if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
-    ROS_INFO("Hooray, the base managed to reach the target" );
-  }
-  else{
-    ROS_INFO("The base failed to reach the target");
-  }
-  //go back to the client
-  x=0;y=0;z=0;
-  goal=set_goal();
-  ROS_INFO("Sending goal");
-  ac.sendGoal(goal);
-  ac.waitForResult();
-  if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
-    ROS_INFO("Hooray, the base managed to reach the target" );
-  }
-  else{
-    ROS_INFO("The base failed to reach the target");
-  }
-  return 0;
 
+
+  //go to the destination
+  ros::param::get("/goal_pose_x",  x);  
+  ros::param::get("/goal_pose_y",  y); 
+  ros::param::get("/goal_pose_z",  z); 
+  ros::param::get("/goal_orientation_w",w);
+  goal=set_goal();
+  ROS_INFO("Sending goal");
+  ac.sendGoal(goal);
+  ac.waitForResult();
+  if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
+    ROS_INFO("Hooray, the base managed to reach the target" );
+  }
+  else{
+    ROS_INFO("The base failed to reach the target");
+  }
+
+  //go back to the client
+  x = req.x;
+  y = req.y;
+  z = req.z;
+  w = req.orientation;
+  goal=set_goal();
+  ROS_INFO("Sending goal");
+  ac.sendGoal(goal);
+  ac.waitForResult();
+  if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
+    ROS_INFO("Hooray, the base managed to reach the target" );
+  }
+  else{
+    ROS_INFO("The base failed to reach the target");
+  }
+  res.succeed =true;
+  return true;
 
 }
+
+int main(int argc, char** argv){
+  ros::init(argc, argv, "simple_navigation_goals");
+  ros::NodeHandle n;
+  ros::ServiceServer service = n.advertiseService("deliver_server", deliver_navigation);
+  ROS_INFO("Ready recieve delivery request");
+  ros::spin();
+  return 0;
+}
+
 
