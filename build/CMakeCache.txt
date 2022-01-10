@@ -127,7 +127,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=simple_navigation_goals
+CATKIN_WHITELIST_PACKAGES:STRING=delivery_navigation
 
 //Path to a file.
 CHOLMOD_INCLUDE_DIR:PATH=/usr/include/suitesparse
@@ -589,6 +589,12 @@ ddynamic_reconfigure_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libdynamic_
 
 //Value Computed by CMake
 ddynamic_reconfigure_SOURCE_DIR:STATIC=/home/wheeltec/wheeltec_robot/src/realsense-ros-development/ddynamic_reconfigure-kinetic-devel
+
+//Value Computed by CMake
+delivery_navigation_BINARY_DIR:STATIC=/home/wheeltec/wheeltec_robot/build/delivery_navigation
+
+//Value Computed by CMake
+delivery_navigation_SOURCE_DIR:STATIC=/home/wheeltec/wheeltec_robot/src/delivery_navigation
 
 //Value Computed by CMake
 depthimage_to_laserscan_BINARY_DIR:STATIC=/home/wheeltec/wheeltec_robot/build/depthimage_to_laserscan-melodic-devel

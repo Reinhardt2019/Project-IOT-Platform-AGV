@@ -29,6 +29,7 @@ affee06a7fb55b822f155b6cca2bd315 /home/wheeltec/wheeltec_robot/devel/include/cos
 71a73356ec4b8bc6730521743a822a7b /home/wheeltec/wheeltec_robot/devel/include/costmap_2d/ObstaclePluginConfig.h
 faa6e120da191df6b230753ec38739d2 /home/wheeltec/wheeltec_robot/devel/include/costmap_2d/VoxelGrid.h
 48b699749b31f41f70374a2f0052d3a5 /home/wheeltec/wheeltec_robot/devel/include/costmap_2d/VoxelPluginConfig.h
+4c2ca5fd1410b458d17642f311de75bf /home/wheeltec/wheeltec_robot/devel/include/delivery_navigation/ClientPose.h
 fc867fbe3474e1b656bc2fdd0afa4382 /home/wheeltec/wheeltec_robot/devel/include/depthimage_to_laserscan/DepthConfig.h
 55177e4c2bb7d234606e28f6f0b3092d /home/wheeltec/wheeltec_robot/devel/include/dwa_local_planner/DWAPlannerConfig.h
 ea97fb74d8572326e792d2369ef93a4b /home/wheeltec/wheeltec_robot/devel/include/global_planner/GlobalPlannerConfig.h
@@ -105,6 +106,8 @@ afbdc2fe5fe8a46ae5d0b748f0737a25 /home/wheeltec/wheeltec_robot/devel/lib/python2
 fef7791bc8a4e16291d022e34257c954 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py
 626006c0dc13682c424d5bacd5146f2c /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/costmap_2d/msg/_VoxelGrid.py
 a5f3922816d775f48fb332de9ce85824 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/costmap_2d/msg/__init__.py
+e52f1dc3baa2a58935c12eb224ff888c /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/delivery_navigation/srv/_ClientPose.py
+f522783d62dd2ea8ec9704bc4619236f /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/delivery_navigation/srv/__init__.py
 f8d22402e110d1cc8718bd18f88cb556 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/navfn/srv/_MakeNavPlan.py
 5fb407e730fc50ce65ff99a9e6457912 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/navfn/srv/_SetCostmap.py
 09ad2272dc589534f374f593b51bccc8 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/navfn/srv/__init__.py
@@ -117,6 +120,8 @@ e278ace47f5a30fcada7ae03cd9ba28c /home/wheeltec/wheeltec_robot/devel/lib/python2
 0a90aa156db038178ed1572ff0eef66f /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/rrt_exploration/msg/__init__.py
 1175937224774bf747d90f4be986307b /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/simple_follower/msg/__init__.py
 eb5fc04265697fd9b1e32431926c5a76 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/simple_follower/msg/_position.py
+ab2a8a74c744dba362074a8a2d766f23 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/simple_navigation_goals/srv/_ClientPose.py
+32034dd6a9e57f71d92de8d5fd653261 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/simple_navigation_goals/srv/__init__.py
 b652616d603a8558bbc1858a63945932 /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/teb_local_planner/msg/_FeedbackMsg.py
 98612760b342e6e284c3e824d63cdcad /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/teb_local_planner/msg/_TrajectoryMsg.py
 aa9c00b2589715e207d15443dc74ae9c /home/wheeltec/wheeltec_robot/devel/lib/python2.7/dist-packages/teb_local_planner/msg/_TrajectoryPointMsg.py
@@ -179,6 +184,7 @@ ce6a02d3d97bde0f38268d6d6251d945 /home/wheeltec/wheeltec_robot/devel/share/commo
 53f55082203925fec24c4ba9c0ac9d0c /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/astra_camera/srv/SwitchIRCamera.lisp
 dd9bdc03c2e32f7f912b446476e339ac /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/base_local_planner/msg/Position2DInt.lisp
 9bdf866df7844ba4b8e23bdd17aa3619 /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp
+ceb22a7857eec96b12a15028007d6e1a /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/delivery_navigation/srv/ClientPose.lisp
 66b85893d9b3ca5b185277b6202c123c /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/navfn/srv/MakeNavPlan.lisp
 8947b01c516460cdf32ed33b0212c0eb /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/navfn/srv/SetCostmap.lisp
 572412ba620a794d4a53e2cf7a942822 /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/realsense2_camera/msg/Extrinsics.lisp
@@ -186,6 +192,7 @@ dd9bdc03c2e32f7f912b446476e339ac /home/wheeltec/wheeltec_robot/devel/share/commo
 68a28fdf4fe8f02e9cc529c6e87ef340 /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/robot_pose_ekf/srv/GetStatus.lisp
 a4441680945495d4c52117a958367f19 /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/rrt_exploration/msg/PointArray.lisp
 63aa9400c8cfe2b5a3b8433424364311 /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/simple_follower/msg/position.lisp
+cdfc1b19b3033e01ca6d1492a141334e /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/simple_navigation_goals/srv/ClientPose.lisp
 a57c94cca4b5e2bfa5d6f74413f9998a /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/teb_local_planner/msg/FeedbackMsg.lisp
 fc3ed78a22c939cacda0c7372a51f943 /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/teb_local_planner/msg/TrajectoryMsg.lisp
 111f32578ee1fbda9c6842235b04dcf3 /home/wheeltec/wheeltec_robot/devel/share/common-lisp/ros/teb_local_planner/msg/TrajectoryPointMsg.lisp
@@ -242,6 +249,7 @@ dad5d56868f35e9f8f0ebb4e8c0ea751 /home/wheeltec/wheeltec_robot/devel/share/genno
 0fb6a0ea2adfd0b9b464547647cec33b /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/astra_camera/srv/SwitchIRCamera.js
 50a44ac407206e1a78126902d99a3158 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js
 a2a50570366d84ff830562ef8b3fb5d7 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js
+8a426f89546cd81c55ef16ba26ac199e /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/delivery_navigation/srv/ClientPose.js
 eda776a82ff6641e6f9bf6f6522d3397 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js
 033db8553e56bfd88fc33ccd7f60954a /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js
 4e704c764e413953cb9fa6e37b5e7fce /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/realsense2_camera/msg/Extrinsics.js
@@ -249,6 +257,7 @@ eda776a82ff6641e6f9bf6f6522d3397 /home/wheeltec/wheeltec_robot/devel/share/genno
 fe49acebaa140c74b6ea82ee427a7e94 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js
 1ba3231bca36e06a31afb7c56875af13 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/rrt_exploration/msg/PointArray.js
 3a39528c735283e6d3a029b15da3dfb7 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/simple_follower/msg/position.js
+ff32fe3cd09363da35f45c8ad0abcb97 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/simple_navigation_goals/srv/ClientPose.js
 caceb823fc87ef0f4d4b4a60e0d26af7 /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/teb_local_planner/msg/FeedbackMsg.js
 5afc43dccda24328f521986bc837b7ce /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/teb_local_planner/msg/TrajectoryMsg.js
 8c95b57d8fc9d88ba78f5710c38d0a1e /home/wheeltec/wheeltec_robot/devel/share/gennodejs/ros/teb_local_planner/msg/TrajectoryPointMsg.js
@@ -308,6 +317,8 @@ ede3fd7a37e1a65472c669157917ecf7 /home/wheeltec/wheeltec_robot/devel/share/roseu
 e6df6561502894977695c1dd4c5b21c3 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/base_local_planner/msg/Position2DInt.l
 4728419e4f11287331c2a157480142fa /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/costmap_2d/manifest.l
 d767a2651fba952f9d385ce57b789d50 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/costmap_2d/msg/VoxelGrid.l
+e6e8e76a4c636120955c627c2fb4ec3d /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/delivery_navigation/manifest.l
+3db2ca4df4fe0fc0f1592b799c9e410b /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/delivery_navigation/srv/ClientPose.l
 5d1bf0d23d69c15221a5b1dd8b3c5ee2 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/navfn/manifest.l
 556027de13359a9019c64e3ec3bbccd2 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/navfn/srv/MakeNavPlan.l
 fb73800bd3af71eba285e783799afaa8 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/navfn/srv/SetCostmap.l
@@ -320,6 +331,8 @@ a68c74c2946a7224e44b9ef7f090ed3f /home/wheeltec/wheeltec_robot/devel/share/roseu
 5bf010923a3c7d86956964d1f0437693 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/rrt_exploration/msg/PointArray.l
 a25671c4358fc5e26d123d8b52fba229 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/simple_follower/manifest.l
 48f820d639f470c4bf952234bc9c1167 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/simple_follower/msg/position.l
+804dc1ff378fc850b6172b6e206df243 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/simple_navigation_goals/manifest.l
+7e43c2abd9ca38ebeb88ef4449e6feb2 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/simple_navigation_goals/srv/ClientPose.l
 2a760c3ebb06bc5485080dfaa67d6dff /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/teb_local_planner/manifest.l
 f0b45390e85c3ba34d0629024b9d1e17 /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/teb_local_planner/msg/FeedbackMsg.l
 3902652cb3f2cd4a0bcf784896bbee7b /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/teb_local_planner/msg/TrajectoryMsg.l
@@ -360,3 +373,9 @@ ef905d07f5142dbbbbe33dc39da4b9a6 /home/wheeltec/wheeltec_robot/devel/share/roseu
 2c67966ea5c4445406b299774388d57e /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/xf_mic_asr_offline/srv/Set_Major_Mic_srv.l
 71caa299e300086f12e4eb595ce13c7a /home/wheeltec/wheeltec_robot/devel/share/roseus/ros/xf_mic_asr_offline/srv/Start_Record_srv.l
 2af5cc7861b7475ea22a5aad6a8252e9 CMakeFiles/clean_test_results
+6b09d876ccb969ba802bebc7e53d140a delivery_navigation/CMakeFiles/_delivery_navigation_generate_messages_check_deps_ClientPose
+cea91cf9619dcdab408c6d18e9747d34 delivery_navigation/CMakeFiles/delivery_navigation_generate_messages_cpp
+cea91cf9619dcdab408c6d18e9747d34 delivery_navigation/CMakeFiles/delivery_navigation_generate_messages_eus
+cea91cf9619dcdab408c6d18e9747d34 delivery_navigation/CMakeFiles/delivery_navigation_generate_messages_lisp
+cea91cf9619dcdab408c6d18e9747d34 delivery_navigation/CMakeFiles/delivery_navigation_generate_messages_nodejs
+cea91cf9619dcdab408c6d18e9747d34 delivery_navigation/CMakeFiles/delivery_navigation_generate_messages_py

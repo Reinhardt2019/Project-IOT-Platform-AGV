@@ -1,5 +1,0 @@
-<launch>
-    <node pkg="simple_navigation_goals" name="del" type="simple_navigation_goals">
-          <rosparam file="$(find simple_navigation_goals)/parameters/destination.yaml" command="load" />
-    </node>
-</launch>

@@ -1,0 +1,5 @@
+goal_pose_x: 4.6
+goal_pose_y: 0.4
+goal_pose_z: 0.0
+goal_orientation_w: 1.0
+go_to_client_first: true
