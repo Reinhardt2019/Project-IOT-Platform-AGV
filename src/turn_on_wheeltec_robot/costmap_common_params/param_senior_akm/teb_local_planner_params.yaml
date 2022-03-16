@@ -12,16 +12,16 @@ TebLocalPlannerROS:
  feasibility_check_no_poses: 3 #检测位姿可到达的时间间隔 minimum 0
 
  # Robot
- max_vel_x: 0.5 #最大x前向速度
+ max_vel_x: 0.4 #最大x前向速度 lower
  max_vel_y: 0.0 #最大y前向速度，非全向移动小车需要设置为0
- max_vel_x_backwards: 0.5 #最大后退速度
- max_vel_theta: 1.5  #最大转向角速度
- acc_lim_x: 0.2  #最大x向加速度
+ max_vel_x_backwards: 0.4 #最大后退速度 lower
+ max_vel_theta: 2.0  #最大转向角速度 larger
+ acc_lim_x: 0.15  #最大x向加速度 lower
  acc_lim_y: 0.0  #最大y向加速度，非全向移动小车需要设置为0
- acc_lim_theta: 0.3  #最大角加速度
+ acc_lim_theta: 0.35  #最大角加速度 lower
 
  #阿克曼小车参数，非阿克曼小车设置为0
- min_turning_radius: 0.750 #for senior_akm    # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
+ min_turning_radius: 0.80 #for senior_akm    # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
  wheelbase: 0.322 #for senior_akm
  
  cmd_angle_instead_rotvel: False #无论是不是阿克曼小车都设置为false，因为阿克曼小车启用了阿克曼速度转换包
@@ -40,13 +40,15 @@ TebLocalPlannerROS:
 
   #阿克曼系列
   vertices: [[-0.09, -0.185], [-0.09, 0.185], [0.4,0.185],  [0.4, -0.185]]   #机器人形状 for senior_akm
+ 
+ # Goal Tolerance
  xy_goal_tolerance: 0.2   #目标 xy 偏移容忍度  minimum 0.001 maximum 0.2
  yaw_goal_tolerance: 0.1 #目标 角度 偏移容忍度 minimum 0.001 maximum 0.1
  free_goal_vel: False  #允许机器人以最大速度驶向目的地
  complete_global_plan: True
  
  # Obstacles
- min_obstacle_dist: 0.1 #和障碍物最小距离
+ min_obstacle_dist: 0.2 #和障碍物最小距离 not to large
  include_costmap_obstacles: True  #是否将动态障碍物预测为速度模型，
  costmap_obstacles_behind_robot_dist: 1.5  #限制机器人后方规划时考虑的局部成本地图障碍物
  obstacle_poses_affected: 15   #障碍物姿态受影响0~30
@@ -54,7 +56,7 @@ TebLocalPlannerROS:
  costmap_converter_spin_thread: True
  costmap_converter_rate: 5
  include_dynamic_obstacles: True 
- dynamic_obstacle_inflation_dist: 0.6
+ dynamic_obstacle_inflation_dist: 0.4
 
  # Optimization  
  no_inner_iterations: 5
@@ -68,14 +70,14 @@ TebLocalPlannerROS:
  weight_acc_lim_x: 1
  weight_acc_lim_theta: 1
  weight_kinematics_nh: 1000
- weight_kinematics_forward_drive: 1
- weight_kinematics_turning_radius: 1
- weight_optimaltime: 1 # must be > 0
+ weight_kinematics_forward_drive: 10
+ weight_kinematics_turning_radius: 1.0
+ weight_optimaltime: 10 # must be > 0
  weight_shortest_path: 0
  weight_obstacle: 100
- weight_inflation: 0.2
+ weight_inflation: 0.35
  weight_dynamic_obstacle: 10 # not in use yet
- weight_dynamic_obstacle_inflation: 0.2
+ weight_dynamic_obstacle_inflation: 0.25
  weight_viapoint: 1
  weight_adapt_factor: 2
 
@@ -105,8 +107,8 @@ TebLocalPlannerROS:
  
  shrink_horizon_backup: True
  shrink_horizon_min_duration: 10
- oscillation_recovery: False
+ oscillation_recovery: True
  oscillation_v_eps: 0.1
  oscillation_omega_eps: 0.1
- oscillation_recovery_min_duration: 10
+ oscillation_recovery_min_duration: 5
  oscillation_filter_duration: 10
