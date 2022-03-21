@@ -34,41 +34,7 @@ delivery_navigation::ClientPose::Response &res){
 
   //load client position 
   move_base_msgs::MoveBaseGoal client_pose = set_goal(req.x,req.y,req.z,req.orientation);
-  //if the AGV need to go to the client first
-  bool client;
-  ros::param::get("/go_to_client_first",  client);  
-  if(client){
-    ROS_INFO("Sending goal");
-    ac.sendGoal(client_pose);
-    ac.waitForResult();
-    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
-      ROS_INFO("Hooray, the base managed to reach the target" );
-    }
-    else{
-      ROS_INFO("The base failed to reach the target");
-    }
-  }
-
-
-  
-  double x,y,z,w;
-  //go to the destination
-  ros::param::get("/goal_pose_x",  x);  
-  ros::param::get("/goal_pose_y",  y); 
-  ros::param::get("/goal_pose_z",  z); 
-  ros::param::get("/goal_orientation_w",w);
-  move_base_msgs::MoveBaseGoal goal =set_goal(x,y,z,w);
-  ROS_INFO("Sending goal");
-  ac.sendGoal(goal);
-  ac.waitForResult();
-  if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
-    ROS_INFO("Hooray, the base managed to reach the target" );
-  }
-  else{
-    ROS_INFO("The base failed to reach the target");
-  }
-
-  //go back to the client
+  //go to the target location
   client_pose.target_pose.header.stamp = ros::Time::now();
   ROS_INFO("Sending goal");
   ac.sendGoal(client_pose);
