@@ -1,12 +1,5 @@
 <launch>
     <include file="$(find turn_on_wheeltec_robot)/launch/navigation.launch"/>
 
-    <node pkg="delivery_navigation" name="delivery_server" type="delivery_server">
-	  <remap from="/goal_pose_x" to="/delivery_server/goal_pose_x" />
-    	  <remap from="/goal_pose_y" to="/delivery_server/goal_pose_y" />
-    	  <remap from="/goal_pose_z" to="/delivery_server/goal_pose_z" />
-    	  <remap from="/goal_orientation_w" to="/delivery_server/goal_orientation_w" />
-    	  <remap from="/go_to_client_first" to="/delivery_server/go_to_client_first" />
-          <rosparam file="$(find delivery_navigation)/parameters/destination.yaml" command="load" />
-    </node>
+    <node pkg="delivery_navigation" name="delivery_server" type="delivery_server"/>
 </launch>
