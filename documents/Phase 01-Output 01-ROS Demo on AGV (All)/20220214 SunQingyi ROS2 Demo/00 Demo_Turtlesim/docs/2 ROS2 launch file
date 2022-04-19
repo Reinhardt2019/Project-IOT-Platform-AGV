@@ -1,0 +1,40 @@
+[ROS2 launch file](https://docs.ros.org/en/galactic/Tutorials/Launch-Files/Creating-Launch-Files.html)
+
+[Launching/monitoring multiple nodes with Launch](https://docs.ros.org/en/galactic/Tutorials/Launch-Files/Creating-Launch-Files.html)
+
+为了避免每次打开新的终端运行ROS2节点，我们可以使用ROS2 launch file初始化多个节点，并设置相关配置.
+
+Launch file的基本结构如下：
+
+```
+from launch import LaunchDescription
+from launch_ros.actions import Node
+def generate_launch_description():
+   return LaunchDescription([
+      Node(              #要启动的节点
+        package='',
+        namespace='',
+        executable='',
+        name=''
+      )
+   ])
+``` 
+可以在LaunchDescription中加入节点信息等内容.
+
+为了让`colcon`识别launch file， 需要在`setup.py` 中更改`data_files`的设置
+```
+import os
+from glob import glob
+from setuptools import setup
+
+package_name = 'my_package'
+
+setup(
+    # Other parameters ...
+    data_files=[
+        # ... Other data files
+        # Include all launch files. This is the most important line here!
+        (os.path.join('share', package_name), glob('launch/*.launch.py'))
+    ]
+)
+```
