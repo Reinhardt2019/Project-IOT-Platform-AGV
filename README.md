@@ -6,7 +6,7 @@
 ## `.bashrc`文件设置
 ```bash
 export ROS_MASTER_URI=http://10.20.240.247:11311 # 固定，小车的ip地址
-export ROS_HOSTNAME=10.20.240.223 # 连Edge网，根据本地ip修改
+export ROS_HOSTNAME=10.20.240.xxx # 连Edge网，根据本地ip修改
 export SVGA_VGPU10=0
 ```
 
@@ -15,7 +15,7 @@ export SVGA_VGPU10=0
 首先保证虚拟机网络连接和小车连接的WiFi一致（**SUP_Edge**），同时保证`.bashrc`中`ROS_HOSTNAME`和虚拟机桥接网络ip地址一致  
 使用`ssh`远程连接，加上`-Y`参数，密码为: dongguan
 ```bash
-ssh -Y wheeltec@192.168.0.100
+ssh -Y wheeltec@10.20.240.247
 ```
 
 
@@ -63,7 +63,7 @@ rviz # 在本地终端查看
 
 
 ## 备份
-备份某个版本的SD卡  
+备份SD卡镜像  
 ### Windows
 可使用Win32DiskImager  
 工具可在以下路径找到：
@@ -74,9 +74,9 @@ rviz # 在本地终端查看
 - 烧录到对应文件：点击read
 - 还原镜像到SD卡：点击write
 
-### Linux (Ubuntu)
+### Linux
 #### 将SD卡备份为`.img`镜像
-- 将SD卡mount，在ubuntu系统里用`df -h`查看存储卡设备号（如：`/dev/sdx`）
+- 将SD卡mount，用`df -h`查看存储卡设备号（如：`/dev/sdx`）
 - 使用`backup_system.sh`脚本，将`TODO`中分区情况按上一步结果修改
 - 运行脚本
 
@@ -87,3 +87,4 @@ sudo dd if=backup.img of=/dev/sdx status=progress bs=1MiB
 - `of`参数为存储卡设备号  
 
 参考：[树莓派系统镜像一键备份脚本, 最小化镜像保存](https://neucrack.com/p/107)
+https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#4-boot-ubuntu-server
