@@ -22,13 +22,13 @@ ssh -Y wheeltec@10.20.240.247
 ## 键盘控制
 - 远程连接小车
 - 先启动初始化节点
-```bash
-roslaunch turn_on_wheeltec_robot turn_on_wheeltec_robot.launch
-```
+  ```bash
+  roslaunch turn_on_wheeltec_robot turn_on_wheeltec_robot.launch
+  ```
 - 再启动键盘控制节点
-```bash
-roslaunch wheeltec_robot_rc keyboard_teleop.launch
-```
+  ```bash
+  roslaunch wheeltec_robot_rc keyboard_teleop.launch
+  ```
 - 具体控制：
   - 方向向前：i(前轮左转) o(无转向) p(前轮右转) 
   - 方向向后：m(前轮左转) ,(无转向) .(前轮右转)
@@ -37,36 +37,38 @@ roslaunch wheeltec_robot_rc keyboard_teleop.launch
 ## 绘制地图
 - 远程连接小车
 - 启动激光建图
-```bash
-roslaunch turn_on_wheeltec_robot mapping.launch 
-```
+  ```bash
+  roslaunch turn_on_wheeltec_robot mapping.launch 
+  ```
 - 可以用键盘控制（同上）或者APP遥控
   - APP位置  
   `WHEELTEC ROS机器人资料\大车ROS机器人附送资料_2021.11.04\8.软件与驱动\蓝牙APP（用于测试遥控）`
 - 查看建图效果
-```
-rviz # 在本地终端查看
-```
+  ```
+  rviz # 在本地终端查看
+  ```
 
 
 ## 使用2d导航功能
 - 远程连接小车
 - 启动导航节点
-```bash
-roslaunch turn_on_wheeltec_robot navigation.launch
-```
+  ```bash
+  roslaunch turn_on_wheeltec_robot navigation.launch
+  ```
 - 在本地终端运行rviz：
-```bash
-rviz # 在本地终端查看
-```
+  ```bash
+  rviz # 在本地终端查看
+  ```
 - 使用rviz的`2DNavGoal`功能，手动设置终点坐标位置以及方向
 
-## 打开摄像头
+
+## 启动摄像头
 - 远程连接小车
 - 启动摄像头节点
-```bash
-roslaunch usb_cam usb_cam-test.launch
-```
+  ```bash
+  roslaunch usb_cam usb_cam-test.launch
+  ```
+- 本地用`rqt_image_view`查看摄像头显示
 
 
 ## 备份
