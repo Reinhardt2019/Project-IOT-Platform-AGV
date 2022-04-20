@@ -61,6 +61,13 @@ rviz # 在本地终端查看
 ```
 - 使用rviz的`2DNavGoal`功能，手动设置终点坐标位置以及方向
 
+## 打开摄像头
+- 远程连接小车
+- 启动摄像头节点
+```bash
+roslaunch usb_cam usb_cam-test.launch
+```
+
 
 ## 备份
 备份SD卡镜像  
