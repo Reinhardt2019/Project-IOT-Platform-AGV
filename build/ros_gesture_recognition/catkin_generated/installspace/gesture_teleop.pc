@@ -1,8 +1,0 @@
-prefix=/home/wheeltec/wheeltec_robot/install
-
-Name: gesture_teleop
-Description: Description of gesture_teleop
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
