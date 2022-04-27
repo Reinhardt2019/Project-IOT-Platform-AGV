@@ -3,6 +3,9 @@
 所有常用命令放在`.bash_aliases`中，可按需添加/使用
 
 
+## VMWare Ubuntu虚拟机网络设置
+选择桥接模式，`Edit -> Virtual Network Editor -> Change Settings -> Bridged -> Bridge to`，选择电脑网卡。`VM -> Settings -> Network Adapter`，选择`Bridged`。
+
 ## `.bashrc`文件设置
 ```bash
 export ROS_MASTER_URI=http://10.20.240.247:11311 # 固定，小车的ip地址
@@ -66,7 +69,7 @@ ssh -Y wheeltec@10.20.240.247
 - 远程连接小车
 - 启动摄像头节点
   ```bash
-  roslaunch usb_cam usb_cam-test.launch
+  roslaunch astra_camera astra.launch
   ```
 - 本地用`rqt_image_view`查看摄像头显示
 
