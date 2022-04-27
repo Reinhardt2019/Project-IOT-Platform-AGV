@@ -12,7 +12,7 @@ export SVGA_VGPU10=0
 
 
 ## 远程连接小车
-首先保证虚拟机网络连接和小车连接的WiFi一致（**SUP_Edge**），同时保证`.bashrc`中`ROS_HOSTNAME`和虚拟机桥接网络ip地址一致  
+首先保证虚拟机网络连接和小车连接的WiFi一致（**SUP_Edge**），将虚拟机的网络连接改成桥接模式，同时保证`.bashrc`中`ROS_HOSTNAME`和虚拟机桥接网络ip地址一致  
 使用`ssh`远程连接，加上`-Y`参数，密码为: dongguan
 ```bash
 ssh -Y wheeltec@10.20.240.247
