@@ -21,6 +21,7 @@ model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['categ
 ```
 LSTM深度学习网络结构如下图
 ![图片](https://github.com/week0425/Project-IOT-Platform-AGV/blob/58243f2c9fb5cde6c888a003f8a191eb268b03b3/documents/Phase%2002-Output%2004-AGV%20Motion%20Control%20by%20AI%20Vision/02%20gesture_recognition/train_result/LSTM_network_structure.PNG)
+
 训练代码为
 ```python
 model.fit(X_train, y_train, epochs=2000, validation_data=(X_test, y_test), callbacks=[tb_callback], shuffle=True)
