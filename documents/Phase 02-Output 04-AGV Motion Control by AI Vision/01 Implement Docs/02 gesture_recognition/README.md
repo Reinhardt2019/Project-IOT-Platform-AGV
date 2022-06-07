@@ -33,4 +33,4 @@ model.fit(X_train, y_train, epochs=2000, validation_data=(X_test, y_test), callb
 
 将训练权重保存，命名为`action.h5`。
 ## 手势识别效果测试
-运行`identify.py`测试识别效果，具体结果见文件夹`identify_result`。
+运行`identify.py`测试识别效果。
