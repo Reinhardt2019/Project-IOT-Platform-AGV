@@ -20,16 +20,16 @@ model.add(Dense(actions.shape[0], activation='softmax'))
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['categorical_accuracy'])
 ```
 LSTM深度学习网络结构如下图
-![图片](https://github.com/week0425/Project-IOT-Platform-AGV/blob/58243f2c9fb5cde6c888a003f8a191eb268b03b3/documents/Phase%2002-Output%2004-AGV%20Motion%20Control%20by%20AI%20Vision/02%20gesture_recognition/train_result/LSTM_network_structure.PNG)
+![图片](train_result/LSTM_network_structure.PNG)
 
 训练代码为
 ```python
 model.fit(X_train, y_train, epochs=2000, validation_data=(X_test, y_test), callbacks=[tb_callback], shuffle=True)
 ```
 在训练过程中观察输出结果，当训练集和测试集的识别准确率都达到1时（如下图所示），及时停止训练，防止过拟合。如果训练集准确率达到1，而测试集准确率始终到不了1，可以重新再训练，直到满足要求。
-![图片](https://github.com/week0425/Project-IOT-Platform-AGV/blob/58243f2c9fb5cde6c888a003f8a191eb268b03b3/documents/Phase%2002-Output%2004-AGV%20Motion%20Control%20by%20AI%20Vision/02%20gesture_recognition/train_result/train_result.PNG)
-![图片](https://github.com/week0425/Project-IOT-Platform-AGV/blob/58243f2c9fb5cde6c888a003f8a191eb268b03b3/documents/Phase%2002-Output%2004-AGV%20Motion%20Control%20by%20AI%20Vision/02%20gesture_recognition/train_result/loss.png)
-![图片](https://github.com/week0425/Project-IOT-Platform-AGV/blob/58243f2c9fb5cde6c888a003f8a191eb268b03b3/documents/Phase%2002-Output%2004-AGV%20Motion%20Control%20by%20AI%20Vision/02%20gesture_recognition/train_result/accuracy.png)
+![图片](train_result/train_result.PNG)
+![图片](train_result/loss.png)
+![图片](train_result/accuracy.png)
 
 将训练权重保存，命名为`action.h5`。
 ## 手势识别效果测试
