@@ -59,7 +59,7 @@ catkin_create_pkg py3_demo rospy rosmsg roscpp
 ### 3）编写python3的图像发布和接收节点
 ```
 cd py3_demo && mkdir scripts
-cd scripts && img_process.py
+cd scripts && touch img_process.py
 chmod +x img_process.py
 ```
 将以下代码粘进img_process.py中：
