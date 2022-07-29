@@ -44,7 +44,7 @@ def callback(stamp,odom):
 if __name__ == '__main__':
 
 	server = Server()
-    	server.set_endpoint("opc.tcp://10.20.240.247:8000/")
+    	server.set_endpoint("opc.tcp://10.20.240.247:21554/")
 
 	uri = "http://examples.freeopcua.github.io"
 	idx = server.register_namespace(uri)
