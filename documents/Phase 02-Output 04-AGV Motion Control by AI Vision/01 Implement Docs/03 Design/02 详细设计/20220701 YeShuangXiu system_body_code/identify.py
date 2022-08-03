@@ -51,7 +51,7 @@ model.add(Dense(64, activation='relu',kernel_regularizer=regularizers.l2(0.01),
 model.add(Dense(32, activation='relu',kernel_regularizer=regularizers.l2(0.01),
                 activity_regularizer=regularizers.l1(0.01)))
 model.add(Dense(actions.shape[0], activation='softmax'))
-model.load_weights('./src/get_image/scripts/actionf.h5')
+model.load_weights('./src/get_image/scripts/action.h5')
 
 colors = [(245, 117, 16), (117, 245, 16), (16, 117, 245),(16, 11, 245),(16, 117, 24),(1, 117, 245)]
 
