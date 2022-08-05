@@ -63,8 +63,6 @@ def callback(msg):
     pub.publish(twist) #ROS发布速度话题
 
 if __name__=="__main__":
-    settings = termios.tcgetattr(sys.stdin) #获取键值初始化，读取终端相关属性
-
     rospy.init_node('motion_control') #创建ROS节点
     pub = rospy.Publisher('cmd_vel', Twist, queue_size=5)
 
@@ -85,6 +83,3 @@ if __name__=="__main__":
         twist.linear.x = 0;  twist.linear.y = 0;  twist.linear.z = 0
         twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
         pub.publish(twist)
-
-    #程序结束前设置终端相关属性
-    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
