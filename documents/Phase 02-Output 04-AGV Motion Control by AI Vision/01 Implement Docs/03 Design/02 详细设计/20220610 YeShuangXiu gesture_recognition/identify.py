@@ -40,7 +40,7 @@ def extract_keypoints(results):
     return np.concatenate([lh, rh])
 
 model = Sequential()
-model.add(LSTM(64, return_sequences=True, activation='relu', input_shape=(15,126)))
+model.add(LSTM(64, return_sequences=True, activation='relu', input_shape=(5,126)))
 model.add(LSTM(128, return_sequences=True, activation='relu'))
 model.add(LSTM(64, return_sequences=False, activation='relu'))
 model.add(Dense(64, activation='relu',kernel_regularizer=regularizers.l2(0.01),
@@ -78,8 +78,8 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
         else:
             sequence = []
             sentence = 'None'
-        sequence = sequence[-15:]
-        if len(sequence) == 15:
+        sequence = sequence[-5:]
+        if len(sequence) == 5:
             res = model.predict(np.expand_dims(sequence, axis=0))[0]
             print(actions[np.argmax(res)])
             predictions.append(np.argmax(res))

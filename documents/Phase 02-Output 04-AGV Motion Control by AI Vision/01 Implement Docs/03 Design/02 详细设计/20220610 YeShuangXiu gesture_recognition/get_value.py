@@ -54,9 +54,9 @@ DATA_PATH = os.path.join('MP_Data2')
 # Actions that we try to detect
 actions = np.array(['start', 'end', 'turn_left','turn_right', 'go_forward', 'go_backward'])
 # Thirty videos worth of data
-no_sequences = 120
+no_sequences = 360
 # Videos are going to be 30 frames in length
-sequence_length = 15
+sequence_length = 5
 for action in actions:
     for sequence in range(no_sequences):
         try:
