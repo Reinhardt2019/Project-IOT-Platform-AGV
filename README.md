@@ -16,11 +16,12 @@ export SVGA_VGPU10=0
 
 ## 远程连接小车
 首先保证虚拟机网络连接和小车连接的WiFi一致（**SUP_Edge**），同时保证`.bashrc`中`ROS_HOSTNAME`和虚拟机桥接网络ip地址一致  
-使用`ssh`远程连接，加上`-Y`参数，密码为: dongguan
+使用`ssh`远程连接，加上`-Y`参数，密码为: dongguan  
+`@`符号后面ip为小车ip（服务端ip地址,不是上面设置本地ip）
 ```bash
 ssh -Y wheeltec@10.20.240.247
 ```
-
+用户名变为`wheeltec@wheeltec:~$ `表明登陆成功
 
 ## 键盘控制
 - 远程连接小车
@@ -28,7 +29,7 @@ ssh -Y wheeltec@10.20.240.247
   ```bash
   roslaunch turn_on_wheeltec_robot turn_on_wheeltec_robot.launch
   ```
-- 再启动键盘控制节点
+- 再启动键盘控制节点（另外打开一个终端，打开新终端默认用户名为本机，需要重新`ssh`远程连接）
   ```bash
   roslaunch wheeltec_robot_rc keyboard_teleop.launch
   ```
