@@ -1,0 +1,5 @@
+ModuleNotFoundError: No module named 'flask"
+问题在于Python环境配置未成功，setup.py编译出错
+error: package directory 'scripts' does not exist
+解决办法：pip install flask
+后续可能还会缺失其他插件，同样用pip install安装
